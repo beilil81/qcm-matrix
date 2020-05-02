@@ -2,6 +2,7 @@ package com.humanup.matrix.qcm.dao.entities;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import java.io.Serializable;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,7 +15,8 @@ import java.util.List;
 @Builder
 @ToString(of= {"questionId","questionText","choiceList"})
 @Entity
-public class Question {
+@Table(name="question")
+public class Question implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
